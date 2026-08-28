@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de BadrPage: ejemplos reales de páginas web para restaurantes, tiendas online, clínicas, agencias y más.">
+  <title>Portafolio | BadrPage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo" aria-label="BadrPage - Inicio">
+          <img src="img/logo.svg" alt="Bdr >_" class="logo-img" width="160" height="44">
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="portafolio.html" class="active">Portafolio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="btn btn-primary nav-cta">Contactar</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Nuestro portafolio</h1>
+      <p>Proyectos reales y ejemplos prácticos de lo que podemos crear para tu negocio. Filtra por categoría y descubre el resultado.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="restaurante">Restaurantes</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="salud">Salud</button>
+        <button class="filter-btn" data-filter="servicios">Servicios</button>
+        <button class="filter-btn" data-filter="fitness">Fitness</button>
+      </div>
+
+      <div class="portfolio-full">
+        <!-- Proyecto 1: Restaurante -->
+        <article class="portfolio-item animate-on-scroll" data-category="restaurante">
+          <div class="portfolio-img restaurant">🍽️</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Restaurante</span>
+            <h3>La Mesa Gourmet</h3>
+            <p>Web completa para restaurante de alta cocina. Incluye carta digital interactiva, sistema de reservas online, galería de platos y testimonios de clientes.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML5 · CSS Grid · JavaScript · API de reservas</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">lamesagourmet.es</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Menú con filtros por alérgenos y tipo de plato</li>
+                  <li>Reserva de mesa en 3 clics</li>
+                  <li>Integración con Google Maps</li>
+                  <li>Galería lightbox de platos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: E-commerce -->
+        <article class="portfolio-item animate-on-scroll" data-category="ecommerce">
+          <div class="portfolio-img ecommerce">🛍️</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">E-commerce</span>
+            <h3>Moda Urbana</h3>
+            <p>Tienda online de ropa y accesorios con más de 200 productos. Filtros avanzados, carrito persistente, wishlist y checkout optimizado para móvil.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML · CSS · JS · Stripe · LocalStorage</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">modaurbanashop.com</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Filtros por talla, color, precio y categoría</li>
+                  <li>Carrito con persistencia local</li>
+                  <li>Pagos seguros con Stripe</li>
+                  <li>Páginas de producto con zoom de imagen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: Clínica -->
+        <article class="portfolio-item animate-on-scroll" data-category="salud">
+          <div class="portfolio-img clinic">🏥</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Salud</span>
+            <h3>Clínica Vital</h3>
+            <p>Sitio corporativo para clínica privada con sistema de cita previa online, área de pacientes, blog de salud y equipo médico presentado de forma cercana.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML5 · CSS · JavaScript · Formspree</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">clinicavital.es</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Formulario de cita previa multi-paso</li>
+                  <li>Directorio de especialistas</li>
+                  <li>Blog con categorías y búsqueda</li>
+                  <li>Diseño calmado y accesible</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 4: Agencia -->
+        <article class="portfolio-item animate-on-scroll" data-category="servicios">
+          <div class="portfolio-img agency">✨</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Servicios</span>
+            <h3>Pixel Creative</h3>
+            <p>Web de agencia de marketing digital con casos de estudio, servicios detallados, calculadora de presupuesto interactiva y formulario de briefing.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML · CSS · JS · Animaciones CSS</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">pixelcreative.es</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Calculadora de presupuesto en tiempo real</li>
+                  <li>Casos de estudio con métricas</li>
+                  <li>Animaciones al scroll</li>
+                  <li>Dark mode opcional</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 5: Abogados -->
+        <article class="portfolio-item animate-on-scroll" data-category="servicios">
+          <div class="portfolio-img lawyer">⚖️</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Servicios</span>
+            <h3>Bufete Navarro</h3>
+            <p>Web corporativa para despacho de abogados. Transmite confianza y profesionalidad. Incluye áreas de práctica, equipo y formulario de consulta confidencial.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML5 · CSS · JavaScript</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">bufetenavarro.com</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Áreas de práctica con iconografía</li>
+                  <li>Formulario de consulta segura</li>
+                  <li>Perfiles de abogados</li>
+                  <li>Diseño sobrio y elegante</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 6: Fitness -->
+        <article class="portfolio-item animate-on-scroll" data-category="fitness">
+          <div class="portfolio-img fitness">💪</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Fitness</span>
+            <h3>Iron Gym</h3>
+            <p>Web para gimnasio con horarios de clases, precios de planes, galería de instalaciones y formulario de inscripción de prueba gratuita.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML · CSS · JS · Tabla de horarios dinámica</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">irongym.es</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Horario de clases filtrable por día</li>
+                  <li>Comparador de planes de membresía</li>
+                  <li>CTA de "prueba gratis" destacado</li>
+                  <li>Diseño enérgico y motivador</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-banner animate-on-scroll">
+        <h2>¿Quieres un resultado como estos?</h2>
+        <p>Cuéntanos tu proyecto y te mostramos cómo podemos ayudarte a destacar online.</p>
+        <a href="contacto.html" class="btn btn-white">Empezar mi proyecto</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="BadrPage - Inicio">
+          <img src="img/logo.svg" alt="Bdr >_" class="logo-img" width="160" height="44">
+        </a>
+          <p>Agencia especializada en diseño y desarrollo de páginas web profesionales orientadas a resultados.</p>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="servicios.html">Diseño web</a></li>
+            <li><a href="servicios.html">Desarrollo</a></li>
+            <li><a href="servicios.html">E-commerce</a></li>
+            <li><a href="servicios.html">Mantenimiento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@badrpage.com">hola@badrpage.com</a></li>
+            <li><a href="tel:+34600000000">+34 600 000 000</a></li>
+            <li>Madrid, España</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> BadrPage. Todos los derechos reservados.</span>
+        <span>Hecho con ❤️ y código limpio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
