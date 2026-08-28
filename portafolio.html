@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de BadrPage: ejemplos reales de páginas web para restaurantes, tiendas online, clínicas, agencias y más.">
+  <title>Portafolio | BadrPage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">B</div>
+          Badr<span>Page</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="portafolio.html" class="active">Portafolio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="btn btn-primary nav-cta">Contactar</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Nuestro portafolio</h1>
+      <p>Proyectos reales y ejemplos prácticos de lo que podemos crear para tu negocio. Filtra por categoría y descubre el resultado.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="restaurante">Restaurantes</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="salud">Salud</button>
+        <button class="filter-btn" data-filter="servicios">Servicios</button>
+        <button class="filter-btn" data-filter="fitness">Fitness</button>
+      </div>
+
+      <div class="portfolio-full">
+        <!-- Proyecto 1: Restaurante -->
+        <article class="portfolio-item animate-on-scroll" data-category="restaurante">
+          <div class="portfolio-img restaurant">🍽️</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">Restaurante</span>
+            <h3>La Mesa Gourmet</h3>
+            <p>Web completa para restaurante de alta cocina. Incluye carta digital interactiva, sistema de reservas online, galería de platos y testimonios de clientes.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;"><strong>Tecnologías:</strong> HTML5 · CSS Grid · JavaScript · API de reservas</p>
+            <div class="demo-preview">
+              <div class="demo-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <div class="demo-url">lamesagourmet.es</div>
+              </div>
+              <div class="demo-content">
+                <strong style="display:block;margin-bottom:0.5rem;">Funcionalidades clave:</strong>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.2rem;list-style:disc;">
+                  <li>Menú con filtros por alérgenos y tipo de plato</li>
+                  <li>Reserva de mesa en 3 clics</li>
+                  <li>Integración con Google Maps</li>
+                  <li>Galería lightbox de platos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: E-commerce -->
+        <article class="portfolio-item animate-on-scroll" data-category="ecommerce">
+          <div class="portfolio-img ecommerce">🛍️</div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag">E-commerce</span>
+ 
+... 
