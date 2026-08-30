@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pedir proyecto — WebCorpPro. Formulario de solicitud.">
+  <title>Pedir proyecto | WebCorpPro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230ea5e9'/><text x='50' y='68' font-size='48' font-family='system-ui,sans-serif' font-weight='700' fill='white' text-anchor='middle'>W</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="WebCorpPro inicio">
+        <span class="logo-mark">W</span>
+        <span class="logo-text">WebCorp<span>Pro</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="pedido.html" class="active">Pedir proyecto</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Pedir proyecto</h1>
+      <p>Cuéntanos qué necesitas. Te respondemos por email con un presupuesto personalizado. No hay precios fijos en la web: cada proyecto se valora según lo que pidas.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-page">
+      <form class="form" id="contactForm" action="https://formsubmit.co/badredinazzahraoui52@gmail.com" method="POST">
+        <!-- FormSubmit (funciona en GitHub Pages) -->
+        <input type="hidden" name="_subject" value="Pedido WebCorpPro — nuevo proyecto">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-group">
+          <label for="nombre">Nombre <span class="req">*</span></label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo de proyecto <span class="req">*</span></label>
+          <select id="tipo" name="tipo" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Web corporativa">Web corporativa</option>
+            <option value="Tienda online">Tienda online</option>
+            <option value="Landing page">Landing page</option>
+            <option value="Rediseño de web existente">Rediseño de web existente</option>
+            <option value="Identidad visual / logo">Identidad visual / logo</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="presupuesto">Presupuesto aproximado</label>
+          <select id="presupuesto" name="presupuesto">
+            <option value="" disabled selected>Selecciona un rango</option>
+            <option value="A consultar">A consultar</option>
+            <option value="Menos de 500 €">Menos de 500 €</option>
+            <option value="500 – 1.000 €">500 – 1.000 €</option>
+            <option value="1.000 – 2.500 €">1.000 – 2.500 €</option>
+            <option value="Más de 2.500 €">Más de 2.500 €</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Cuéntanos tu proyecto <span class="req">*</span></label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe brevemente qué necesitas, plazos deseados y cualquier detalle importante..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Enviar mensaje</button>
+        <p class="form-note">Al enviar aceptas que tratemos tus datos para responder a tu consulta. No compartimos tu información con terceros.</p>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo logo-footer">
+          <span class="logo-mark">W</span>
+          <span class="logo-text">WebCorp<span>Pro</span></span>
+        </a>
+        <p>Agencia especializada en diseño y desarrollo de páginas web profesionales orientadas a resultados.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Empresa</h4>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="pedido.html">Pedir proyecto</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <a href="mailto:badredinazzahraoui52@gmail.com">badredinazzahraoui52@gmail.com</a>
+        <a href="tel:+34631733932">+34 631 733 932</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span class="year"></span> WebCorpPro. Badredin Azzahraoui, Adam Farhouni y Saber el Khalifi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
