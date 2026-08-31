@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://badre7733.github.io/BadrPage/sitemap.xml
