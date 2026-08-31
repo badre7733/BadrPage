@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://badre7733.github.io/BadrPage/sitemap.xml
+Sitemap: https://webcorppro.qd.je/sitemap.xml
