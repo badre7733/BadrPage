@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webcorppro.qd.je/sitemap.xml
+Sitemap: http://webcorppro.qd.je/sitemap.xml
