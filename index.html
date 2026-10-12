@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -91,7 +91,17 @@ section { padding: 60px 0; }
 .download-link {
   display: inline-block; padding: 12px 15px; border-radius: 9px;
   color: var(--blue); border: 1px dashed var(--blue); text-decoration: none;
+  margin-top: 5px;
 }
+.download-link:hover { background: #83b2ff12; }
+.download.required { border-color: #83b2ff70; }
+.required-label {
+  display: inline-block; color: #08111f; background: var(--cyan);
+  padding: 4px 9px; border-radius: 6px; font-size: .75rem;
+  font-weight: bold; margin-bottom: 12px;
+}
+.install-steps { padding-left: 20px; color: var(--muted); }
+.install-steps li { margin: 8px 0; }
 .project { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .steps li { margin: 12px 0; color: #c4d0e1; }
 .partners { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 25px; }
@@ -109,7 +119,6 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
 <body>
 <header class="wrap">
   <div class="logo">
-    <!-- Guarda tu logo como logo-badr.png -->
     <img src="logo-badr.png" alt="BADR AI">
     <span class="muted">TDR · Local AI</span>
   </div>
@@ -124,7 +133,8 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
 <div class="wrap">
   <section class="hero">
     <div>
-      <div class="eyebrow" data-es="Inteligencia artificial sin conexión"
+      <div class="eyebrow"
+        data-es="Inteligencia artificial sin conexión"
         data-ca="Intel·ligència artificial sense connexió"
         data-en="Artificial intelligence, offline">
         Inteligencia artificial sin conexión
@@ -137,8 +147,14 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
         Una inteligencia artificial práctica, privada y diseñada para funcionar localmente, sin depender del Wi-Fi ni de servidores en Internet.
       </p>
       <div class="actions">
-        <a class="btn primary" href="#downloads" data-es="Descargar BADR AI ↓" data-ca="Descarregar BADR AI ↓" data-en="Get BADR AI ↓">Descargar BADR AI ↓</a>
-        <a class="btn" href="#project" data-es="Conocer el TDR" data-ca="Conèixer el TDR" data-en="About the project">Conocer el TDR</a>
+        <a class="btn primary" href="#downloads"
+          data-es="Descargar BADR AI ↓"
+          data-ca="Descarregar BADR AI ↓"
+          data-en="Get BADR AI ↓">Descargar BADR AI ↓</a>
+        <a class="btn" href="#project"
+          data-es="Conocer el TDR"
+          data-ca="Conèixer el TDR"
+          data-en="About the project">Conocer el TDR</a>
       </div>
     </div>
     <div class="hero-card">
@@ -213,37 +229,125 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
         <p class="note"
           data-es="Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto. El consumo real depende del equipo y del modelo."
           data-ca="Transparència: no seria correcte afirmar que la petjada ambiental total és zero. El dispositiu consumeix electricitat i fabricar maquinari també té impacte. El consum real depèn de l'equip i del model."
-          data-en="Transparency: it would not be accurate to claim the total environmental footprint is zero. The device uses electricity, and hardware manufacturing also has an impact.">Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto. El consumo real depende del equipo y del modelo.</p>
+          data-en="Transparency: it would not be accurate to claim the total environmental footprint is zero. The device uses electricity, and hardware manufacturing also has an impact.">Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto.</p>
       </div>
     </div>
   </section>
 
+  <!-- DESCARGAS -->
   <section id="downloads">
     <div class="kicker" data-es="Descargas" data-ca="Descàrregues" data-en="Downloads">Descargas</div>
     <h2 data-es="Lleva BADR AI contigo." data-ca="Emporta't BADR AI." data-en="Take BADR AI with you.">Lleva BADR AI contigo.</h2>
-    <p class="muted" data-es="Sustituye los enlaces de ejemplo por los enlaces reales cuando publiques las versiones."
-      data-ca="Badr Ai proximament, no falta molt... esta a prop..."
-      data-en="Badr Ai is coming, wait for it">Próximamente en la web estarán disponibles los enlaces de descarga</p>
+    <p class="muted"
+      data-es="En Windows, instala primero el motor de IA y después abre BADR AI."
+      data-ca="A Windows, instal·la primer el motor d'IA i després obre BADR AI."
+      data-en="On Windows, install the AI engine first, then open BADR AI.">
+      En Windows, instala primero el motor de IA y después abre BADR AI.
+    </p>
+
     <div class="downloads">
+
+      <!-- MOTOR OBLIGATORIO PARA WINDOWS -->
+      <article class="download required">
+        <div class="platform">WINDOWS · MOTOR</div>
+        <div class="required-label"
+          data-es="PASO 1 · OBLIGATORIO"
+          data-ca="PAS 1 · OBLIGATORI"
+          data-en="STEP 1 · REQUIRED">PASO 1 · OBLIGATORIO</div>
+        <h3
+          data-es="Motor de IA para Windows"
+          data-ca="Motor d'IA per a Windows"
+          data-en="Windows AI engine">Motor de IA para Windows</h3>
+        <p
+          data-es="BADR AI utiliza Ollama para ejecutar el modelo de lenguaje localmente. Instala este motor en el ordenador antes de utilizar la versión de Windows. La primera instalación necesita Internet."
+          data-ca="BADR AI utilitza Ollama per executar el model de llenguatge localment. Instal·la aquest motor a l'ordinador abans d'utilitzar la versió de Windows. La primera instal·lació necessita Internet."
+          data-en="BADR AI uses Ollama to run the language model locally. Install this engine on your computer before using the Windows version. Internet is needed for the initial installation.">
+          BADR AI utiliza Ollama para ejecutar el modelo de lenguaje localmente. Instala este motor en el ordenador antes de utilizar la versión de Windows. La primera instalación necesita Internet.
+        </p>
+        <ol class="install-steps">
+          <li data-es="Descarga el instalador oficial de Ollama."
+            data-ca="Descarrega l'instal·lador oficial d'Ollama."
+            data-en="Download the official Ollama installer.">Descarga el instalador oficial de Ollama.</li>
+          <li data-es="Ejecuta el instalador y termina la instalación."
+            data-ca="Executa l'instal·lador i completa la instal·lació."
+            data-en="Run the installer and complete setup.">Ejecuta el instalador y termina la instalación.</li>
+          <li data-es="Después, instala el modelo siguiendo las instrucciones del siguiente paso."
+            data-ca="Després, instal·la el model seguint les instruccions del pas següent."
+            data-en="Then install the model by following the next step.">Después, instala el modelo siguiendo las instrucciones del siguiente paso.</li>
+        </ol>
+        <a class="download-link"
+          href="https://ollama.com/download/windows"
+          target="_blank" rel="noopener noreferrer"
+          data-es="Descargar motor oficial ↓"
+          data-ca="Descarregar motor oficial ↓"
+          data-en="Download official engine ↓">Descargar motor oficial ↓</a>
+      </article>
+
+      <!-- MODELO DE IA -->
+      <article class="download required">
+        <div class="platform">WINDOWS · MODELO</div>
+        <div class="required-label"
+          data-es="PASO 2 · OBLIGATORIO"
+          data-ca="PAS 2 · OBLIGATORI"
+          data-en="STEP 2 · REQUIRED">PASO 2 · OBLIGATORIO</div>
+        <h3
+          data-es="Modelo de IA Qwen 2.5 3B"
+          data-ca="Model d'IA Qwen 2.5 3B"
+          data-en="Qwen 2.5 3B AI model">Modelo de IA Qwen 2.5 3B</h3>
+        <p
+          data-es="El motor Ollama no incluye automáticamente este modelo. Después de instalar Ollama, abre la terminal de Windows y ejecuta el comando indicado para descargarlo."
+          data-ca="El motor Ollama no inclou automàticament aquest model. Després d'instal·lar Ollama, obre el terminal de Windows i executa l'ordre indicada per descarregar-lo."
+          data-en="Ollama does not automatically include this model. After installing Ollama, open Windows Terminal and run the command below to download it.">
+          El motor Ollama no incluye automáticamente este modelo. Después de instalar Ollama, abre la terminal de Windows y ejecuta el comando indicado para descargarlo.
+        </p>
+        <p><code>ollama run qwen2.5:3b</code></p>
+        <button type="button" class="download-link"
+          onclick="copyModelCommand()"
+          data-es="Copiar comando"
+          data-ca="Copiar ordre"
+          data-en="Copy command">Copiar comando</button>
+        <p class="muted"
+          data-es="La descarga del modelo requiere Internet la primera vez. Después podrá ejecutarse localmente."
+          data-ca="La descàrrega del model necessita Internet la primera vegada. Després es podrà executar localment."
+          data-en="The model requires internet for its first download. After that, it can run locally.">
+          La descarga del modelo requiere Internet la primera vez. Después podrá ejecutarse localmente.
+        </p>
+      </article>
+
+      <!-- APLICACIÓN ANDROID -->
       <article class="download">
         <div class="platform">ANDROID</div>
         <h3 data-es="BADR AI para Android" data-ca="BADR AI per a Android" data-en="BADR AI for Android">BADR AI para Android</h3>
         <p data-es="Versión móvil con el modelo ejecutándose directamente en el teléfono."
           data-ca="Versió mòbil amb el model executant-se directament al telèfon."
           data-en="Mobile version with the model running directly on the phone.">Versión móvil con el modelo ejecutándose directamente en el teléfono.</p>
-        <!-- Android todavía no tiene enlace de descarga -->
         <a class="download-link" href="#" onclick="return downloadPlaceholder(event)"
-          data-es="Descarga Android próximamente" data-ca="Descàrrega Android pròximament" data-en="Android download coming soon">Descarga Android próximamente</a>
+          data-es="Descarga Android próximamente"
+          data-ca="Descàrrega Android pròximament"
+          data-en="Android download coming soon">Descarga Android próximamente</a>
       </article>
+
+      <!-- APLICACIÓN WINDOWS -->
       <article class="download">
-        <div class="platform">WINDOWS</div>
+        <div class="platform">WINDOWS · APP</div>
+        <div class="required-label"
+          data-es="PASO 3 · APLICACIÓN"
+          data-ca="PAS 3 · APLICACIÓ"
+          data-en="STEP 3 · APPLICATION">PASO 3 · APLICACIÓN</div>
         <h3 data-es="BADR AI portable para Windows" data-ca="BADR AI portable per a Windows" data-en="BADR AI portable for Windows">BADR AI portable para Windows</h3>
-        <p data-es="Versión pensada para ejecutarse desde una carpeta o memoria USB, según los requisitos finales."
-          data-ca="Versió pensada per executar-se des d'una carpeta o memòria USB, segons els requisits finals."
-          data-en="Designed to run from a folder or USB drive, depending on the final requirements.">Versión pensada para ejecutarse desde una carpeta o memoria USB, según los requisitos finales.</p>
-        <a class="download-link" href="https://mega.nz/file/UmYSibaa#_Nz9xSkPd8VGq1O2no_pj-Ufb09JRTKcsdrppUGYj4I" target="_blank" rel="noopener noreferrer"
-          data-es="Descarga Windows ya disponible" data-ca="Descàrrega Windows ja disponible" data-en="Windows download is now available">ya disponible para windows</a>
+        <p data-es="Descarga la aplicación BADR AI. Para utilizar el chat, el motor Ollama y el modelo Qwen 2.5 3B deben estar instalados y disponibles en el ordenador."
+          data-ca="Descarrega l'aplicació BADR AI. Per utilitzar el xat, el motor Ollama i el model Qwen 2.5 3B han d'estar instal·lats i disponibles a l'ordinador."
+          data-en="Download the BADR AI application. To use the chat, Ollama and the Qwen 2.5 3B model must be installed and available on the computer.">
+          Descarga la aplicación BADR AI. Para utilizar el chat, el motor Ollama y el modelo Qwen 2.5 3B deben estar instalados y disponibles en el ordenador.
+        </p>
+        <a class="download-link"
+          href="https://mega.nz/file/UmYSibaa#_Nz9xSkPd8VGq1O2no_pj-Ufb09JRTKcsdrppUGYj4I"
+          target="_blank" rel="noopener noreferrer"
+          data-es="Descargar BADR AI para Windows ↓"
+          data-ca="Descarregar BADR AI per a Windows ↓"
+          data-en="Download BADR AI for Windows ↓">Descargar BADR AI para Windows ↓</a>
       </article>
+
     </div>
   </section>
 
@@ -277,7 +381,6 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
           data-ca="Projecte desenvolupat per Badredin en el marc del seu Treball de Recerca (TDR), amb la col·laboració de l'Institut EMT."
           data-en="A project developed by Badredin as part of his research project (TDR), in collaboration with Institut EMT.">Proyecto desarrollado por Badredin en el marco de su Treball de Recerca (TDR), con la colaboración del Institut EMT.</p>
         <div class="partners">
-          <!-- Guarda el segundo logo como logo-emt.png -->
           <img src="logo-badr.png" alt="BADR AI">
           <img src="logo-emt.png" alt="Institut EMT">
         </div>
@@ -291,14 +394,20 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
 </div>
 </main>
 
-<footer><div class="wrap">© <span id="year"></span> BADR AI · <span data-es="Proyecto TDR" data-ca="Projecte TDR" data-en="Research project">Proyecto TDR</span></div></footer>
+<footer>
+  <div class="wrap">© <span id="year"></span> BADR AI ·
+    <span data-es="Proyecto TDR" data-ca="Projecte TDR" data-en="Research project">Proyecto TDR</span>
+  </div>
+</footer>
 
 <script>
 function setLanguage(lang) {
   document.documentElement.lang = lang;
+
   document.querySelectorAll("[data-" + lang + "]").forEach(el => {
     el.textContent = el.getAttribute("data-" + lang);
   });
+
   document.querySelectorAll(".languages button").forEach(btn => {
     btn.classList.toggle("active", btn.textContent.toLowerCase() === lang);
   });
@@ -316,7 +425,25 @@ function downloadPlaceholder(event) {
   return false;
 }
 
+async function copyModelCommand() {
+  const command = "ollama run qwen2.5:3b";
+  const lang = document.documentElement.lang;
+
+  try {
+    await navigator.clipboard.writeText(command);
+    const messages = {
+      es: "Comando copiado. Pégalo en la terminal de Windows.",
+      ca: "Ordre copiada. Enganxa-la al terminal de Windows.",
+      en: "Command copied. Paste it into Windows Terminal."
+    };
+    alert(messages[lang] || messages.es);
+  } catch {
+    prompt("Copia este comando:", command);
+  }
+}
+
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+```
