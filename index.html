@@ -213,9 +213,7 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
         <p class="note"
           data-es="Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto. El consumo real depende del equipo y del modelo."
           data-ca="Transparència: no seria correcte afirmar que la petjada ambiental total és zero. El dispositiu consumeix electricitat i fabricar maquinari també té impacte. El consum real depèn de l'equip i del model."
-          data-en="Transparency: it would not be accurate to claim the total environmental footprint is zero. The device uses electricity, and hardware manufacturing also has an impact.">
-          Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto. El consumo real depende del equipo y del modelo.
-        </p>
+          data-en="Transparency: it would not be accurate to claim the total environmental footprint is zero. The device uses electricity, and hardware manufacturing also has an impact.">Transparencia: no sería correcto afirmar que la huella ambiental total es cero. El dispositivo consume electricidad y fabricar hardware también tiene impacto. El consumo real depende del equipo y del modelo.</p>
       </div>
     </div>
   </section>
@@ -233,8 +231,8 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
         <p data-es="Versión móvil con el modelo ejecutándose directamente en el teléfono."
           data-ca="Versió mòbil amb el model executant-se directament al telèfon."
           data-en="Mobile version with the model running directly on the phone.">Versión móvil con el modelo ejecutándose directamente en el teléfono.</p>
-        <!-- Sustituye # por el enlace real del APK -->
-        <a class="download-link" href="google.com" onclick="return downloadPlaceholder(event)"
+        <!-- Android todavía no tiene enlace de descarga -->
+        <a class="download-link" href="#" onclick="return downloadPlaceholder(event)"
           data-es="Descarga Android próximamente" data-ca="Descàrrega Android pròximament" data-en="Android download coming soon">Descarga Android próximamente</a>
       </article>
       <article class="download">
@@ -243,9 +241,8 @@ footer { border-top: 1px solid #ffffff20; padding: 25px 0; color: var(--muted); 
         <p data-es="Versión pensada para ejecutarse desde una carpeta o memoria USB, según los requisitos finales."
           data-ca="Versió pensada per executar-se des d'una carpeta o memòria USB, segons els requisits finals."
           data-en="Designed to run from a folder or USB drive, depending on the final requirements.">Versión pensada para ejecutarse desde una carpeta o memoria USB, según los requisitos finales.</p>
-        <!-- Sustituye # por el enlace real del ZIP o ejecutable -->
-        <a class="download-link" href="https://mega.nz/file/UmYSibaa#_Nz9xSkPd8VGq1O2no_pj-Ufb09JRTKcsdrppUGYj4I" onclick="return downloadPlaceholder(event)"
-          data-es="Descarga Windows ya disponible" data-ca="Descàrrega Windows ja disponible" data-en="Windows download is now avalible">ya disponible para windows</a>
+        <a class="download-link" href="https://mega.nz/file/UmYSibaa#_Nz9xSkPd8VGq1O2no_pj-Ufb09JRTKcsdrppUGYj4I" target="_blank" rel="noopener noreferrer"
+          data-es="Descarga Windows ya disponible" data-ca="Descàrrega Windows ja disponible" data-en="Windows download is now available">ya disponible para windows</a>
       </article>
     </div>
   </section>
@@ -306,17 +303,19 @@ function setLanguage(lang) {
     btn.classList.toggle("active", btn.textContent.toLowerCase() === lang);
   });
 }
+
 function downloadPlaceholder(event) {
   event.preventDefault();
   const lang = document.documentElement.lang;
   const messages = {
-    es: "El enlace de descarga aún no está configurado. Sustituye ' por el enlace real.",
-    ca: "L'enllaç de descàrrega encara no està configurat. Substitueix href='# per l'enllaç real.",
-    en: "The download link is not configured yet. Replace href='#' with the real link."
+    es: "La descarga para Android todavía no está disponible.",
+    ca: "La descàrrega per a Android encara no està disponible.",
+    en: "The Android download is not available yet."
   };
   alert(messages[lang] || messages.es);
   return false;
 }
+
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
