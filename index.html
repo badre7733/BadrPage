@@ -1,265 +1,464 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08111f">
-<meta name="description" content="BADR AI: proyecto de inteligencia artificial local para Android y Windows, diseñado para funcionar sin conexión a Internet.">
+<meta name="theme-color" content="#05140e">
+<meta name="description" content="BADR AI: proyecto de inteligencia artificial local para Windows, diseñado para funcionar sin conexión a Internet.">
 <title>BADR AI | Inteligencia artificial local</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #08111f;
-  --panel: #101d30;
-  --blue: #83b2ff;
-  --cyan: #69e3d0;
-  --text: #f3f6fc;
-  --muted: #aab8cc;
+  --bg-dark: #05140e;
+  --bg-card: #0b221a;
+  --bg-card-hover: #102d23;
+  --accent-green: #10b981;
+  --accent-mint: #34d399;
+  --accent-glow: rgba(16, 185, 129, 0.18);
+  --border-color: rgba(52, 211, 153, 0.15);
+  --border-hover: rgba(52, 211, 153, 0.4);
+  --text-main: #ecfdf5;
+  --text-muted: #9ca3af;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
-  background: radial-gradient(ellipse at top right, #193456, transparent 45%), var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 10% 50%, rgba(52, 211, 153, 0.08) 0%, transparent 45%);
+  color: var(--text-main);
+  font-family: var(--font-body);
   line-height: 1.6;
 }
 
 .wrap {
-  width: min(1100px, 92%);
+  width: min(1140px, 92%);
   margin: auto;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #ffffff20;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 
 .logo img {
-  max-width: 125px;
-  max-height: 55px;
+  max-width: 120px;
+  max-height: 50px;
   object-fit: contain;
+}
+
+.logo-badge {
+  color: var(--accent-mint);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
 }
 
 .languages {
   display: flex;
-  gap: 6px;
+  gap: 8px;
+  background: var(--bg-card);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
 }
 
-button, .btn {
-  padding: 11px 15px;
-  border-radius: 9px;
+.languages button {
+  padding: 6px 14px;
+  border-radius: 7px;
   cursor: pointer;
-  border: 1px solid #344761;
+  border: none;
   background: transparent;
-  color: var(--text);
-  font-weight: bold;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
 }
 
-.languages button.active,
-.btn.primary {
-  background: var(--blue);
-  color: #08111f;
-  border-color: var(--blue);
+.languages button:hover {
+  color: var(--text-main);
 }
 
-.hero {
-  min-height: 500px;
-  display: grid;
-  grid-template-columns: 1.3fr .7fr;
-  gap: 35px;
+.languages button.active {
+  background: var(--accent-green);
+  color: #05140e;
+}
+
+/* BUTTONS */
+button, .btn {
+  display: inline-flex;
   align-items: center;
-  padding: 65px 0;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-weight: 700;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+button:hover, .btn:hover {
+  border-color: var(--accent-mint);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn.primary {
+  background: var(--accent-green);
+  color: #05140e;
+  border-color: var(--accent-green);
+}
+
+.btn.primary:hover {
+  background: var(--accent-mint);
+  border-color: var(--accent-mint);
+  color: #05140e;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+  padding: 75px 0 60px;
 }
 
 .eyebrow {
-  color: var(--cyan);
+  color: var(--accent-mint);
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-mint);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-mint);
 }
 
 h1 {
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  line-height: 1;
-  margin: 20px 0;
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  margin: 15px 0 20px;
 }
 
-h1 span { color: var(--blue); }
+h1 span {
+  color: var(--accent-mint);
+  background: linear-gradient(135deg, var(--accent-mint), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.15;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 15px;
 }
 
-h3 { margin-bottom: 10px; }
+h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+}
 
 .lead {
-  font-size: 1.2rem;
-  color: #c4d0e1;
+  font-size: 1.15rem;
+  color: #d1fae5;
+  max-width: 600px;
 }
 
 .actions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
-.hero-card, .card, .download, .project-box {
-  background: var(--panel);
-  border: 1px solid #ffffff18;
-  border-radius: 18px;
-  padding: 25px;
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-card { text-align: center; }
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  pointer-events: none;
+}
 
 .orbit {
-  width: 155px;
-  height: 155px;
+  width: 140px;
+  height: 140px;
   margin: 10px auto 25px;
-  border: 2px solid var(--blue);
+  border: 2px dashed var(--accent-mint);
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: var(--blue);
-  font-size: 1.7rem;
-  font-weight: bold;
-  box-shadow: 0 0 45px #83b2ff25;
+  color: var(--accent-mint);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 0 35px var(--accent-glow);
+  animation: spin 25s linear infinite;
 }
 
-.stats, .cards, .downloads {
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* CARDS & CONTAINERS */
+.hero-card, .card, .download, .project-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 28px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover, .download:hover, .project-box:hover {
+  border-color: var(--border-hover);
+}
+
+.stats, .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 
 .stat {
-  padding: 20px;
-  border: 1px solid #ffffff18;
-  border-radius: 13px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
 }
 
 .stat strong {
   display: block;
-  color: var(--cyan);
+  color: var(--accent-mint);
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  margin-bottom: 5px;
 }
 
 .stat span, .muted, .card p, .download p {
-  color: var(--muted);
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
-section { padding: 60px 0; }
+section {
+  padding: 70px 0;
+}
 
 .kicker {
-  color: var(--cyan);
-  font-weight: bold;
+  color: var(--accent-mint);
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
 
-.cards {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 25px;
+.icon {
+  font-size: 2rem;
+  color: var(--accent-mint);
+  margin-bottom: 12px;
 }
-
-.icon { font-size: 1.8rem; }
 
 .eco {
   display: grid;
-  grid-template-columns: .8fr 1.2fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 25px;
   align-items: start;
 }
 
 .eco-highlight {
-  background: #10302d;
-  border: 1px solid #69e3d044;
+  background: linear-gradient(145deg, #092c22, #071e17);
+  border: 1px solid var(--accent-mint);
   border-radius: 18px;
-  padding: 25px;
+  padding: 28px;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
 }
 
-.eco-highlight p { color: #c4e2dc; }
+.eco-highlight h3 {
+  color: var(--accent-mint);
+}
 
-.eco-list li { margin: 13px 0; }
+.eco-highlight p {
+  color: #d1fae5;
+}
+
+.eco-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.eco-list li {
+  margin: 14px 0;
+  padding-left: 28px;
+  position: relative;
+  color: var(--text-main);
+}
+
+.eco-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-mint);
+  font-weight: bold;
+}
 
 .note {
-  padding: 15px;
-  border-left: 3px solid var(--cyan);
-  background: #ffffff08;
-  color: var(--muted);
+  padding: 16px 20px;
+  border-left: 3px solid var(--accent-mint);
+  background: rgba(52, 211, 153, 0.05);
+  color: var(--text-muted);
+  border-radius: 0 12px 12px 0;
+  font-size: 0.9rem;
 }
 
+/* DOWNLOADS (3 PASOS WINDOWS) */
 .downloads {
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 30px;
 }
 
 .download .platform {
-  color: var(--cyan);
-  font-weight: bold;
-  letter-spacing: 2px;
+  color: var(--accent-mint);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
 .download-link {
   display: inline-block;
-  padding: 12px 15px;
-  border-radius: 9px;
-  color: var(--blue);
-  border: 1px dashed var(--blue);
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: var(--accent-mint);
+  border: 1px dashed var(--accent-mint);
   text-decoration: none;
-  margin-top: 5px;
+  margin-top: 15px;
   font: inherit;
+  font-weight: 700;
   cursor: pointer;
   background: transparent;
+  transition: all 0.25s ease;
 }
 
 .download-link:hover {
-  background: #83b2ff12;
+  background: rgba(52, 211, 153, 0.12);
 }
 
-.download.required { border-color: #83b2ff70; }
+.download.required {
+  border-color: rgba(52, 211, 153, 0.35);
+}
 
 .required-label {
   display: inline-block;
-  color: #08111f;
-  background: var(--cyan);
-  padding: 4px 9px;
+  color: #05140e;
+  background: var(--accent-mint);
+  padding: 4px 10px;
   border-radius: 6px;
-  font-size: .75rem;
-  font-weight: bold;
+  font-size: 0.75rem;
+  font-weight: 800;
   margin-bottom: 12px;
+}
+
+code {
+  display: block;
+  background: #040e0a;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  color: var(--accent-mint);
+  font-family: monospace;
+  margin: 12px 0;
+  word-break: break-all;
 }
 
 .install-steps {
   padding-left: 20px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
-.install-steps li { margin: 8px 0; }
+.install-steps li {
+  margin: 8px 0;
+}
 
+/* PROJECT & FOOTER */
 .project {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.steps {
+  padding-left: 20px;
 }
 
 .steps li {
   margin: 12px 0;
-  color: #c4d0e1;
+  color: #d1fae5;
 }
 
 .partners {
@@ -267,45 +466,50 @@ section { padding: 60px 0; }
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 25px;
+  margin: 20px 0;
 }
 
 .partners img {
-  max-width: 150px;
-  max-height: 65px;
+  max-width: 140px;
+  max-height: 55px;
   object-fit: contain;
   background: white;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 footer {
-  border-top: 1px solid #ffffff20;
-  padding: 25px 0;
-  color: var(--muted);
+  border-top: 1px solid var(--border-color);
+  padding: 30px 0;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent-mint);
   outline-offset: 4px;
 }
 
-@media(max-width: 750px) {
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
+/* RESPONSIVE */
+@media(max-width: 950px) {
+  .downloads {
+    grid-template-columns: 1fr;
   }
+}
 
+@media(max-width: 850px) {
   .hero, .eco, .project {
     grid-template-columns: 1fr;
   }
 
-  .stats, .cards, .downloads {
+  .stats, .cards {
     grid-template-columns: 1fr;
   }
 
-  .hero { padding: 45px 0; }
+  header {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 </style>
 </head>
@@ -315,7 +519,7 @@ a:focus-visible, button:focus-visible {
 <header class="wrap">
   <div class="logo">
     <img src="logo-badr.png" alt="BADR AI">
-    <span class="muted">TDR · Local AI</span>
+    <span class="logo-badge">TDR · Local AI</span>
   </div>
 
   <nav class="languages" aria-label="Seleccionar idioma">
@@ -341,10 +545,10 @@ a:focus-visible, button:focus-visible {
       <h1>BADR <span>AI</span></h1>
 
       <p class="lead"
-        data-es="Una inteligencia artificial práctica, privada y diseñada para funcionar localmente, sin depender del Wi-Fi ni de servidores en Internet."
-        data-ca="Una intel·ligència artificial pràctica i privada, dissenyada per funcionar localment, sense dependre del Wi-Fi ni de servidors a Internet."
-        data-en="A practical, privacy-minded AI designed to run locally, without relying on Wi-Fi or internet servers.">
-        Una inteligencia artificial práctica, privada y diseñada para funcionar localmente, sin depender del Wi-Fi ni de servidores en Internet.
+        data-es="Una inteligencia artificial práctica, privada y diseñada para funcionar localmente en Windows, sin depender del Wi-Fi ni de servidores en Internet."
+        data-ca="Una intel·ligència artificial pràctica i privada, dissenyada per funcionar localment a Windows, sense dependre del Wi-Fi ni de servidors a Internet."
+        data-en="A practical, privacy-minded AI designed to run locally on Windows, without relying on Wi-Fi or internet servers.">
+        Una inteligencia artificial práctica, privada y diseñada para funcionar localmente en Windows, sin depender del Wi-Fi ni de servidores en Internet.
       </p>
 
       <div class="actions">
@@ -431,7 +635,7 @@ a:focus-visible, button:focus-visible {
       BADR AI es un proyecto de investigación que explora cómo crear un asistente conversacional que se ejecute en el propio dispositivo. El objetivo es ofrecer una herramienta práctica, accesible y capaz de funcionar sin conexión a Internet.
     </p>
 
-    <div class="cards">
+    <div class="cards" style="margin-top: 25px;">
       <article class="card">
         <div class="icon">⌁</div>
         <h3 data-es="Sin Wi-Fi" data-ca="Sense Wi-Fi" data-en="No Wi-Fi">Sin Wi-Fi</h3>
@@ -456,12 +660,12 @@ a:focus-visible, button:focus-visible {
 
       <article class="card">
         <div class="icon">⌘</div>
-        <h3 data-es="Multiplataforma" data-ca="Multiplataforma" data-en="Cross-platform">Multiplataforma</h3>
+        <h3 data-es="Windows Portable" data-ca="Windows Portable" data-en="Windows Portable">Windows Portable</h3>
         <p
-          data-es="El proyecto contempla una aplicación para Android y una versión portable para Windows."
-          data-ca="El projecte preveu una aplicació per a Android i una versió portable per a Windows."
-          data-en="The project plans an Android app and a portable Windows version.">
-          El proyecto contempla una aplicación para Android y una versión portable para Windows.
+          data-es="El proyecto contempla una versión portable optimizada para ordenadores con sistema Windows."
+          data-ca="El projecte preveu una versió portable optimitzada per a ordinadors amb sistema Windows."
+          data-en="The project plans a portable version optimized for Windows computers.">
+          El proyecto contempla una versión portable optimizada para ordenadores con sistema Windows.
         </p>
       </article>
     </div>
@@ -483,7 +687,7 @@ a:focus-visible, button:focus-visible {
       Tecnología con conciencia ambiental.
     </h2>
 
-    <div class="eco">
+    <div class="eco" style="margin-top: 25px;">
       <div class="eco-highlight">
         <h3
           data-es="Menos dependencia de la nube"
@@ -534,7 +738,7 @@ a:focus-visible, button:focus-visible {
     </div>
   </section>
 
-  <!-- DESCARGAS -->
+  <!-- DESCARGAS (PASOS PARA WINDOWS) -->
   <section id="downloads">
     <div class="kicker" data-es="Descargas" data-ca="Descàrregues" data-en="Downloads">Descargas</div>
 
@@ -546,10 +750,10 @@ a:focus-visible, button:focus-visible {
     </h2>
 
     <p class="muted"
-      data-es="En Windows, instala primero el motor de IA y después abre BADR AI."
-      data-ca="A Windows, instal·la primer el motor d'IA i després obre BADR AI."
-      data-en="On Windows, install the AI engine first, then open BADR AI.">
-      En Windows, instala primero el motor de IA y después abre BADR AI.
+      data-es="Sigue los 3 pasos en orden: instala primero el motor de IA, descarga el modelo y después abre la aplicación."
+      data-ca="Segueix els 3 passos en ordre: instal·la primer el motor d'IA, descarrega el model i després obre l'aplicació."
+      data-en="Follow the 3 steps in order: install the AI engine first, download the model, and then open the app.">
+      Sigue los 3 pasos en orden: instala primero el motor de IA, descarga el modelo y después abre la aplicación.
     </p>
 
     <div class="downloads">
@@ -595,10 +799,10 @@ a:focus-visible, button:focus-visible {
           </li>
 
           <li
-            data-es="Después, instala el modelo siguiendo las instrucciones del siguiente paso."
-            data-ca="Després, instal·la el model seguint les instruccions del pas següent."
-            data-en="Then install the model by following the next step.">
-            Después, instala el modelo siguiendo las instrucciones del siguiente paso.
+            data-es="Después, instala el modelo siguiendo el paso 2."
+            data-ca="Després, instal·la el model seguint el pas 2."
+            data-en="Then install the model by following step 2.">
+            Después, instala el modelo siguiendo el paso 2.
           </li>
         </ol>
 
@@ -638,7 +842,7 @@ a:focus-visible, button:focus-visible {
           El motor Ollama no incluye automáticamente este modelo. Después de instalar Ollama, abre la terminal de Windows y ejecuta el comando indicado para descargarlo.
         </p>
 
-        <p><code>ollama run qwen2.5:3b</code></p>
+        <code>ollama run qwen2.5:3b</code>
 
         <button type="button"
           class="download-link"
@@ -649,41 +853,12 @@ a:focus-visible, button:focus-visible {
           Copiar comando
         </button>
 
-        <p class="muted"
+        <p class="muted" style="margin-top: 10px;"
           data-es="La descarga del modelo requiere Internet la primera vez. Después podrá ejecutarse localmente."
           data-ca="La descàrrega del model necessita Internet la primera vegada. Després es podrà executar localment."
           data-en="The model requires internet for its first download. After that, it can run locally.">
           La descarga del modelo requiere Internet la primera vez. Después podrá ejecutarse localmente.
         </p>
-      </article>
-
-      <!-- APLICACIÓN ANDROID: ENLACE CORREGIDO -->
-      <article class="download">
-        <div class="platform">ANDROID</div>
-
-        <h3
-          data-es="BADR AI para Android"
-          data-ca="BADR AI per a Android"
-          data-en="BADR AI for Android">
-          BADR AI para Android
-        </h3>
-
-        <p
-          data-es="Descarga BADR AI para tu teléfono Android. La aplicación utiliza el procesamiento local si el modelo y sus componentes están incluidos o instalados correctamente."
-          data-ca="Descarrega BADR AI al teu telèfon Android. L'aplicació utilitza el processament local si el model i els components estan inclosos o instal·lats correctament."
-          data-en="Download BADR AI for your Android phone. The app uses local processing if the model and its components are included or installed correctly.">
-          Descarga BADR AI para tu teléfono Android. La aplicación utiliza el procesamiento local si el modelo y sus componentes están incluidos o instalados correctamente.
-        </p>
-
-        <a class="download-link"
-          href="https://mega.nz/file/puxlyLqK#YxROX5JUqbWRcKorS1nLIP6BCCdxCrWcNAd2iP1JWpk"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-es="Descargar BADR AI para Android ↓"
-          data-ca="Descarregar BADR AI per a Android ↓"
-          data-en="Download BADR AI for Android ↓">
-          Descargar BADR AI para Android ↓
-        </a>
       </article>
 
       <!-- PASO 3: APLICACIÓN WINDOWS -->
@@ -712,7 +887,7 @@ a:focus-visible, button:focus-visible {
         </p>
 
         <a class="download-link"
-          href="https://mega.nz/file/UmYSibaa#_Nz9xSkPd8VGq1O2no_pj-Ufb09JRTKcsdrppUGYj4I"
+          href="https://mega.nz/file/Qz5j1DzZ#C9ZQufvOX5ZrPXyf39hyaAFemdeCzNA8YO1PF65XzTs"
           target="_blank"
           rel="noopener noreferrer"
           data-es="Descargar BADR AI para Windows ↓"
@@ -768,10 +943,10 @@ a:focus-visible, button:focus-visible {
           </li>
 
           <li
-            data-es="Explorar la adaptación a Android y Windows portable."
-            data-ca="Explorar l'adaptació a Android i Windows portable."
-            data-en="Explore Android and portable Windows versions.">
-            Explorar la adaptación a Android y Windows portable.
+            data-es="Explorar la adaptación a Windows portable."
+            data-ca="Explorar l'adaptació a Windows portable."
+            data-en="Explore portable Windows versions.">
+            Explorar la adaptación a Windows portable.
           </li>
 
           <li
@@ -867,7 +1042,6 @@ async function copyModelCommand() {
     await navigator.clipboard.writeText(command);
     alert(messages[lang] || messages.es);
   } catch (error) {
-    // Alternativa si el navegador no permite usar el portapapeles.
     window.prompt(
       lang === "ca" ? "Copia aquesta ordre:" :
       lang === "en" ? "Copy this command:" :
@@ -878,8 +1052,7 @@ async function copyModelCommand() {
 }
 
 // Año automático en el pie de página.
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
